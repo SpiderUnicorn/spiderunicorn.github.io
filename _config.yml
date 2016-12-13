@@ -78,8 +78,8 @@ analytics:
 # Site Author
 author:
   name             : "Johan Nyström"
-  avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "Web developer"
+  avatar           : "/assets/images/portrait.png"
+  bio              : "Software developer from Sweden"
   location         : "Sweden"
   email            :
   uri              :
