@@ -66,7 +66,8 @@ og_image                 : # Open Graph/Twitter default site image
 social:
   type                   : # Person or Organization (defaults to Person)
   name                   : # If the user or organization name differs from the site's name
-  links: # An array of links to social media profiles
+  links:
+    - "https://github.com/SpiderUnicorn"
 
 # Analytics
 analytics:
@@ -81,7 +82,7 @@ author:
   avatar           : "/assets/images/portrait.png"
   bio              : "Software developer from Sweden"
   location         : "Sweden"
-  email            :
+  email            : "test@test.se"
   uri              :
   bitbucket        :
   codepen          :
@@ -89,12 +90,12 @@ author:
   flickr           :
   facebook         :
   foursquare       :
-  github           :
+  github           : "https://github.com/SpiderUnicorn"
   google_plus      :
   keybase          :
   instagram        :
   lastfm           :
-  linkedin         :
+  linkedin         : "https://www.linkedin.com/in/johannys"
   pinterest        :
   soundcloud       :
   stackoverflow    : # "123456/username" (the last part of your profile url, e.g. http://stackoverflow.com/users/123456/username)
