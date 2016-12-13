@@ -15,7 +15,7 @@ url                      : "https://spiderunicorn.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : "spiderunicorn/spiderunicorn.github.io"
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
-# breadcrumbs            : false # true, false (default)
+breadcrumbs              : false # true, false (default)
 words_per_minute         : 200
 comments:
   provider               : "staticman"
@@ -55,7 +55,7 @@ yandex_site_verification :
 
 # Social Sharing
 twitter:
-  username               :
+  username               : 
 facebook:
   username               :
   app_id                 :
@@ -81,14 +81,14 @@ author:
   avatar           : "/assets/images/portrait.png"
   bio              : "Software developer from Sweden"
   location         : "Sweden"
-  email            : "test"
-  uri              : "test"
-  bitbucket        : "test"
-  codepen          : "test"
-  dribbble         : "test"
-  flickr           : "test"
-  facebook         : "test"
-  foursquare       : "test"
+  email            : 
+  uri              : 
+  bitbucket        : 
+  codepen          : 
+  dribbble         : 
+  flickr           : 
+  facebook         : 
+  foursquare       : 
   github           : "SpiderUnicorn"
   google_plus      :
   keybase          :

@@ -24,7 +24,13 @@
       </p>
     {% endif %}
   </div>
-
+<ul class="social-icons">
+          <li>
+          <a href="https://github.com/{{ author.github }}" itemprop="sameAs">
+            <i class="fa fa-fw fa-github" aria-hidden="true"></i> GitHub
+          </a>
+        </li>
+</ul>
   <div class="author__urls-wrapper">
     <button class="btn btn--inverse">{{ site.data.ui-text[site.locale].follow_label | remove: ":" | default: "Follow" }}</button>
     <ul class="author__urls social-icons">
@@ -83,13 +89,11 @@
         </li>
       {% endif %}
 
-      {% if author.linkedin %}
         <li>
           <a href="https://www.linkedin.com/in/{{ author.linkedin }}" itemprop="sameAs">
             <i class="fa fa-fw fa-linkedin-square" aria-hidden="true"></i> LinkedIn
           </a>
         </li>
-      {% endif %}
 
       {% if author.xing %}
         <li>
