@@ -24,16 +24,9 @@
       </p>
     {% endif %}
   </div>
-<ul class="social-icons">
-          <li>
-          <a href="https://github.com/{{ author.github }}" itemprop="sameAs">
-            <i class="fa fa-fw fa-github" aria-hidden="true"></i> GitHub
-          </a>
-        </li>
-</ul>
   <div class="author__urls-wrapper">
     <button class="btn btn--inverse">{{ site.data.ui-text[site.locale].follow_label | remove: ":" | default: "Follow" }}</button>
-    <ul class="author__urls social-icons">
+    <ul class="author__urls">
       {% if author.location %}
         <li itemprop="homeLocation" itemscope itemtype="http://schema.org/Place">
           <i class="fa fa-fw fa-map-marker" aria-hidden="true"></i> <span itemprop="name">{{ author.location }}</span>
