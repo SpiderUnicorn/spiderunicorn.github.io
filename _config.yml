@@ -67,7 +67,6 @@ social:
   type                   : # Person or Organization (defaults to Person)
   name                   : # If the user or organization name differs from the site's name
   links:
-    - "https://github.com/SpiderUnicorn"
 
 # Analytics
 analytics:
@@ -82,20 +81,20 @@ author:
   avatar           : "/assets/images/portrait.png"
   bio              : "Software developer from Sweden"
   location         : "Sweden"
-  email            : "test@test.se"
-  uri              :
-  bitbucket        :
-  codepen          :
-  dribbble         :
-  flickr           :
-  facebook         :
-  foursquare       :
-  github           : "https://github.com/SpiderUnicorn"
+  email            : "test"
+  uri              : "test"
+  bitbucket        : "test"
+  codepen          : "test"
+  dribbble         : "test"
+  flickr           : "test"
+  facebook         : "test"
+  foursquare       : "test"
+  github           : "SpiderUnicorn"
   google_plus      :
   keybase          :
   instagram        :
   lastfm           :
-  linkedin         : "https://www.linkedin.com/in/johannys"
+  linkedin         : "johannys"
   pinterest        :
   soundcloud       :
   stackoverflow    : # "123456/username" (the last part of your profile url, e.g. http://stackoverflow.com/users/123456/username)
