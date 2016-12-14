@@ -7,7 +7,7 @@
 
 # Site Settings
 locale                   : "en"
-title                    : "Blog"
+title                    : "Modern web survival guide"
 title_separator          : "-"
 name                     : "Johan Nyström"
 description              : "Lessons learned working with .NET and the modern web"
@@ -100,7 +100,7 @@ author:
   stackoverflow    : # "123456/username" (the last part of your profile url, e.g. http://stackoverflow.com/users/123456/username)
   steam            :
   tumblr           :
-  twitter          : "mmistakes"
+  twitter          : 
   vine             :
   weibo            :
   xing             :
