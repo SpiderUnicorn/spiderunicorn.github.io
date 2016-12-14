@@ -7,10 +7,10 @@
 
 # Site Settings
 locale                   : "en"
-title                    : "Modern web survival guide"
+title                    : "Blog"
 title_separator          : "-"
 name                     : "Johan Nyström"
-description              : "Lessons learned working with .NET and the modern web"
+description              : ""
 url                      : "https://spiderunicorn.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : "spiderunicorn/spiderunicorn.github.io"
@@ -79,8 +79,8 @@ analytics:
 author:
   name             : "Johan Nyström"
   avatar           : "/assets/images/portrait.png"
-  bio              : "Software developer from Sweden"
-  location         : "Sweden"
+  bio              : "Keeping up with .NET Core and the modern web."
+  location         : "Borlänge, Sweden"
   email            : 
   uri              : 
   bitbucket        : 
