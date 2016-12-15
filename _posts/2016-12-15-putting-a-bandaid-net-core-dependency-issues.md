@@ -1,12 +1,19 @@
 ---
 layout: single
 title: "Putting a band aid on .NET Core dependency issues"
+tags: 
+   - .NET 
+   - .NET Core
+   - Powershell
 ---
+
 >**TL;DR** Problems with .NET Core? [Download this script](https://github.com/SpiderUnicorn/powershell-utilities/blob/master/dotnet/clean-solution-and-clear-nuget-cache/clean_and_clear_cache.ps1). Run in your solution folder. What could go wrong?
 
 ## Background 
 
-In my current project, we opted for ASP.NET Core due its immense performance 
+This is a short tale of the troubles I've faced with running .NET Core together
+with a .NET 4.x in a single, monolithic solution file. In a recent greenfield
+project, my team and I opted for ASP.NET Core due its immense performance 
 improvement over ASP.NET 4.x as well as some other benefits that seemed 
 reasonable at the time. However, we still wanted to use the 'old' .NET for parts 
 of the project to use Entity Framework 6 and some other dependencies not yet
@@ -16,21 +23,24 @@ ported to .NET Core.
 
 ## Problems with mixing .NET Core and .NET 4.x
 
-Some common problems we had in the beginning of the project were due to making 
-references between .NET Core projects and .NET 4.x projects. Here's one of the
-errors we got.
+.NET 4.x is a very stable platform in and of itself. .NET Core is slowly maturing
+as well, and works fine for the most part. However, when you mix .NET 4.x with Core
+in the same solution, problems quickly surface. Most of the problems stem from the
+tooling around .NET Core still being in beta. The first problem we encountered
+was adding references between .NET Core projects and .NET 4.x projects. The first
+thing to overcome was this:
 
 >Unable to resolve 'xxx' for '.NETFramework,Version=v4.6.2'.
 
-All the more confusing, this error seemed to pop up on the build server after
-we stopped getting it locally. An issue was that we couldn't resolve
-dependencies with "dotnet restore" on the solution level, because it couldn't
-resolve dependencies for 4.x projects. 
+The naive solution would be to run *dotnet restore* to resolve everything in the solution. 
+This didn't work well, however, since at the time we worked on the project "dotnet restore" 
+only worked on .NET Core projects
+and it couldn't infer a complete dependency graph to construct the .NET Core projects in.
 
-### The fix
-The solution to the problem was to run the restore through nuget.exe and let
-it resolve both the .NET Core and NET 4.x dependencies. One caveat is that the
-you'll need version 3.5 or above of nuget.exe. You can 
+### Fixing unable to resolve...
+The solution to the problem was to run the restore through the latest version of nuget.exe and have
+it successfully resolve both the .NET Core and NET 4.x dependencies. One caveat was that the
+this only works with version 3.5 or above of nuget.exe. You can 
 [go here to download the latest version](https://dist.nuget.org/win-x86-commandline/latest/nuget.exe).
 
 ## Summary
