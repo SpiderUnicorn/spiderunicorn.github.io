@@ -55,7 +55,7 @@ As far as I can tell, this is caused by stale dependency references being kept a
 some version of a dependency has been updated. Restoring the packages per instructions
 above didn't solve the issue for us. We found that sometimes references were kept in
 **project.lock** files, despite being updated in project.json. Likewise, the **bin** and **obj**
-catalogues would sometimes need to be cleared completely, which the visual studios *clean* command
+directories would sometimes need to be cleared completely, which the visual studios *clean* command
 doesn't do a very good job with.
 
 This all seems straight forward enough, but we also faced issues with old dependencies being cached
