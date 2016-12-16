@@ -42,7 +42,7 @@ it successfully resolve both the .NET Core and NET 4.x dependencies. One caveat 
 this only works with version 3.5 or above of nuget.exe.
 
 ### Fixing unable to resolve...
-Download the latest version of nuget.exe and run **nuget restore**
+Download the latest version of nuget.exe and run **nuget restore**.
 [Go here to download the latest version](https://dist.nuget.org/win-x86-commandline/latest/nuget.exe).
 
 ## Assembly reference manifest mismatch 
@@ -61,9 +61,9 @@ doesn't do a very good job with.
 This all seems straight forward enough, but we also faced issues with old dependencies being cached
 by NuGet, so the NuGet cached had to be cleared.
 
-### Solving manifest mismatch errors
+### Fixing manifest mismatch errors
 
-Remove all cached and generated files. Remove project.lock & project.fragment files,
+Remove project.lock & project.fragment files,
 as well as bin & obj folders. Run *nuget.exe locals all -clear* from cmd. 
 
 ## Summary
