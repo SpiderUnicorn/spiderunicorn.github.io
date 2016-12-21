@@ -6,7 +6,7 @@
 # `jekyll serve`. If you change this file, please restart the server process.
 
 # Site Settings
-locale                   : "en"
+locale                   : "en-GB"
 title                    : "Blog"
 title_separator          : "-"
 name                     : "Johan Nyström"
@@ -64,7 +64,7 @@ og_image                 : # Open Graph/Twitter default site image
 # For specifying social profiles
 # - https://developers.google.com/structured-data/customize/social-profiles
 social:
-  type                   : # Person or Organization (defaults to Person)
+  type                   : Person
   name                   : # If the user or organization name differs from the site's name
   links:
 
@@ -82,7 +82,7 @@ author:
   bio              : "Keeping up with .NET Core and the modern web."
   location         : "Borlänge, Sweden"
   email            : 
-  uri              : 
+  uri              : "http://spiderunicorn.github.io"
   bitbucket        : 
   codepen          : 
   dribbble         : 
@@ -135,8 +135,6 @@ exclude:
   - Rakefile
   - README
   - tmp
-  - /docs # ignore Minimal Mistakes /docs
-  - /test # ignore Minimal Mistakes /test
 keep_files:
   - .git
   - .svn
