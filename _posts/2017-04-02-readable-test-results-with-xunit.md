@@ -7,6 +7,8 @@ tags:
    - XUnit
 ---
 
+How to configure XUnit using settings and custom attributes to achieve readable test output.
+
 ## What is the problem?
 
 XUnit is an excellent testing framework with a few caveats when it comes to its default behavior. One of its less-than-stellar features is the way it outputs test results as *namespace.className.methodName*. This has its use in that it makes it easy to know where the test is located. However, I never find this to be a problem anyway since the test explorer in visual studio makes it trivial to navigate to a test by just clicking on it, and any other editor has useful navigation and search tools too. 
