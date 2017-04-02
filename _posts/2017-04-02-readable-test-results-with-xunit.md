@@ -21,18 +21,18 @@ My most desired output is not knowing which method failed, but knowing what piec
 public void classUnderTest_methodUnderTest()
 ```
 
-the output from XUnit would then be: *namespace.className.classUnderTest_methodUnderTest*. I won’t go into a long discussion on test naming as it’s not really what this post is about. In short, I prefer to name tests along the lines of
+the output from XUnit would then be: *namespace.className.classUnderTest_methodUnderTest*. I won’t go into a long discussion on naming as it’s not really what this post is about. In brief, I prefer to name tests along the lines of
 
 ```csharp
 public void When_that_happens_it_should_do_this()
 ```
 
-This is a very opinionated subject and there are many ways to name tests that all are good. The only common trait is that good tests test behavior and not structure. 
+This is all highly subjective and there are many ways to name tests that all are good in their own way. A common trait of good tests is that they test for behavior and are oblivious of code structure. 
 Writing tests in this style produces the slightly more readable output *namespace.className.methodName.When_that_happens_it_should_do_this*. Still, there is a lot of noise that we could do without. 
 
 ## Creating readable output 
 
-What XUnit lacks in default conventions it makes up for by being straight forward to customize and extend. I won’t go into detail on how to work with .NET core CLI, but I will provide some examples of console output as we go along. I’ll detail the steps I take here only for completeness. Feel free to skip ahead if you don’t care about my specific sample outputs. 
+What XUnit lacks in default conventions it makes up for by being straight forward to customize and extend. I won’t go into detail on how to work with .NET core CLI, but I will provide some examples of console output as we go along. I’ll detail the steps I take here only for completeness. Feel free to skip ahead if you don’t care about my specific example. 
 
 ### Setting up a sample project
 
@@ -76,15 +76,15 @@ The following Tests are available:
     xunit_demo.UnitTest1.Test1
 ```
 
-Note that this doesn’t actually run the test, but we can see the name that XUnit produces with the format namespace.className.methodName. This would be same name written to the test explorer in visual studio.
+Note that this doesn’t actually run the test, but we can see the name that XUnit produces with the format *namespace.className.methodName*, or in this case **xunit_demo.UnitTest1.Test1**. This would be same name written to the test explorer in visual studio.
 
-Now lets move on to configuring the name.
+Now lets move on to configuring XUnit for better readability.
 
 ## Configuring XUnit
 
-The default output of *namespace.className.methodName* can be shortened to just methodName by configuring the test project. For desktop and PCL projects you’d need an App.config file. For dotnet core, add an **xunit.config.json** file.
+The default output of *namespace.className.methodName* can be shortened to just *methodName* by configuring the test project. For desktop and PCL projects you’d need an [App.config](https://xunit.github.io/docs/configuring-with-xml.html) file. For dotnet core, add an **xunit.config.json** file.
 
-A useful starting point is to add diagnostics to the test output. Put the following into the **xunit.config.json** file.
+A good starting point is to add diagnostics to the test output. Put the following into the **xunit.config.json** file. Note that this has no bearing on the output we are working on, it's just nice to have.
 
 ```json
 {
@@ -142,7 +142,7 @@ We have now gone from the test being displayed as *xunit_demo.UnitTest1.Test1* t
 
 First, let’s change the test a bit and rename it to *When_that_happens_it_should_do_this*. Open **Test1.cs** and change the name if you are following along. Wouldn't it be sweet if this could be displayed without the pesky underscores? I suspect my human readers would agree.
 
-To gain full control of what is displayed, we need to move away from the standard FactAttribute and create our own. Let’s create a new class, **Spec.cs* and add the following:
+To gain full control of what is displayed, we need to move away from the standard FactAttribute and create our own. Let’s create a new class, **Spec.cs** and add the following:
 
 ```csharp
 using Xunit;
@@ -157,9 +157,9 @@ public class Spec : FactAttribute {
 }
 ```
 
-The Spec class extends XUnits standard *FactAttribute*. In the constructor, we use the *CallerMemberNameAttribute* to get the name of the calling method, which in this case will be test we annotate with the attribute. Note that the a default value is required, which is why we specify that **testMethodName = ""**. 
+The Spec class extends XUnits standard *FactAttribute*. In the constructor, we use the *CallerMemberNameAttribute* to get the name of the calling method, which in this case will be the test we annotate with the attribute. Note that the a default value is required, which is why we specify that **testMethodName = ""**. 
 
-In the body of the constructor we call the Replace method in the testMethodName string to replace all underscores with spaces. We assign it to a property called **DisplayName**, which is one of two properties that can be called on the attribute, the other being **Skip** (which is used to skip a test from running). Internally, XUnit will use any value provided to the **DisplayName** property and use that to generate test results. See the end of this post for more on DisplayName. 
+In the body of the constructor we call the Replace method on the testMethodName string to replace all underscores with spaces. We assign it to a property called **DisplayName**, which is one of two properties that can be called on the attribute, the other being **Skip** (which is used to skip a test from running). Internally, XUnit will use any value provided to the **DisplayName** property and use that to generate test results. See the end of this post for more on DisplayName. 
 
 Now, change **UnitTest1.cs** to use the new attribute.
 
@@ -184,15 +184,15 @@ $ dotnet test –-list-tests
     When that happens it should do this
 ```
 
-And voilà! On the last line, we finally see our desired output. Again, this will also be included in the visual studio test explorer. Working with the custom attribute is straightforward. You can use it like you would any other function, just remember to put the CallerMemberNameAttribute last of the constructor arguments. Play around with it and find an implementation that suits your needs.
+And voilà! On the last line, we finally see our desired output. Again, this will also be included in the visual studio test explorer. Working with the custom attribute is straightforward. You can use it like you would any other function, just remember to put the CallerMemberNameAttribute last in the constructor arguments. Play around with it and find an implementation that suits your needs.
 
 ## But what about Display Name?
 
 As you saw, we simply set a new value to the XUnit FactAttribute property **DisplayName**. As it turns out, you can call this property without creating a new attribute.
 
 ```csharp
-[Fact(DisplayName = “My own human readable name”)]
-public void My_own_human_readable_name()
+[Fact(DisplayName = "When that happens it should do this")]
+public void When_that_happens_it_should_do_this()
 ```
 
-This would give us the exact same results as going the above route, but with seemingly little effort. If you’d like, you can use DisplayName if you only have a few methods that you think needs a touch of a readability. I think it’s better to create an attribute in almost all cases where you’d like to change the way a method is displayed. In my experience, plain text strings require a lot more effort to maintain and are downright dangerous. Should you rename the test or alter its behaviour without changing the DisplayName your own test will lie to you.
+This would give us the exact same results as going the above route, but with seemingly little effort. I recommend you only use DisplayName if you have a very few methods that you think needs a touch of a readability. Still, I think it’s better to create an attribute in almost all cases where you’d like to change the way a method is displayed. In my experience, plain text strings require a lot more effort to maintain and are downright dangerous. Should you rename the test or alter its behaviour without changing the DisplayName your own test will lie to you.
