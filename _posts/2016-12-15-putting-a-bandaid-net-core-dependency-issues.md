@@ -7,7 +7,7 @@ tags:
    - Powershell
 ---
 
->**TL;DR** Problems with .NET Core? [Download this script](https://github.com/SpiderUnicorn/powershell-utilities/blob/master/dotnet/clean-solution-and-clear-nuget-cache/clean_and_clear_cache.ps1). Run in your solution folder. What could go wrong?
+**Update 2017-04-02**: This should no longer be an issue with the new tooling using csproj instead of project.json.
 
 ## Background 
 
