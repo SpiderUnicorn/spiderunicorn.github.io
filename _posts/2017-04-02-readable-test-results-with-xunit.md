@@ -92,7 +92,7 @@ A good starting point is to add diagnostics to the test output. Put the followin
 }
 ```
 
-Next, make sure the file is included in the build. If you are using visual studio, right click on the file and edit properties. Set “copy to output” to “preserve newest”. If you are using any other editor. Open the **csproj** file and add the following.
+Next, make sure the file is included in the build. If you are using visual studio, right click on the file and edit properties. Set “Copy to Output Directory” to "Copy if newer". If you are using any other editor. Open the **csproj** file and add the following.
 
 ```xml
  <ItemGroup>
