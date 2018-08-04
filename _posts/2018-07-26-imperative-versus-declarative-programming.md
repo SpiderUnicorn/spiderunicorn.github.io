@@ -4,6 +4,7 @@ title: "Imperative versus declarative programming"
 tags:
    - .NET
    - Functional programming
+author_profile: false
 ---
 
 **What the difference is between imperative and declarative, and why you should care.**
