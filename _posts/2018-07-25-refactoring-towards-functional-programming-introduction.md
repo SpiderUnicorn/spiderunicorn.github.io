@@ -6,19 +6,20 @@ tags:
    - Functional programming
 ---
 
-> This is part a series on refactoring towards functional programming.
+> This is part of a series on refactoring towards functional programming.
 
-* [Introduction]({% post_url 2018-07-25-refactoring-towards-functional-programming-introduction %})
-    * [Imperative versus declarative programming]({% post_url 2018-07-26-imperative-versus-declarative-programming %})
-    * [Functional principles for better code]({% post_url 2018-07-27-functional-principles-for-better-code %})
-* Creating a functional API
-	* Transforming with Map
-	* Excluding with Filter
-	* Isolating side effects with ForEach
-* Functional composition
-	* Functional composition through extension methods
-	* Refactoring to point free
-* Functional refactoring conclusions
+---
+**[Introduction]({% post_url 2018-07-25-refactoring-towards-functional-programming-introduction %})**  
+&nbsp;&nbsp;[Imperative versus declarative programming]({% post_url 2018-07-26-imperative-versus-declarative-programming %})  
+&nbsp;&nbsp;&nbsp;&nbsp;[Functional principles for better code]({% post_url 2018-07-27-functional-principles-for-better-code %})  
+Creating a functional API  
+&nbsp;&nbsp;&nbsp;&nbsp;Transforming with Map  
+&nbsp;&nbsp;&nbsp;&nbsp;Excluding with Filter  
+&nbsp;&nbsp;&nbsp;&nbsp;Isolating side effects with ForEach  
+Functional composition  
+&nbsp;&nbsp;&nbsp;&nbsp;Functional composition through extension methods  
+&nbsp;&nbsp;&nbsp;&nbsp;Refactoring to point free  
+Functional refactoring conclusions  
 
 ---
 
