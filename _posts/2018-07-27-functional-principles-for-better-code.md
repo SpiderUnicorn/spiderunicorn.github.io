@@ -14,7 +14,7 @@ tags:
 [Introduction]({% post_url 2018-07-25-refactoring-towards-functional-programming-introduction %})  
 &nbsp;&nbsp;[Imperative versus declarative programming]({% post_url 2018-07-26-imperative-versus-declarative-programming %})  
 &nbsp;&nbsp;&nbsp;&nbsp;**[Functional principles for better code]({% post_url 2018-07-27-functional-principles-for-better-code %})**  
-Creating a functional API  
+[Designing a functional list API]({% post_url 2018-08-04-designing-a-functional-list-api %})  
 &nbsp;&nbsp;&nbsp;&nbsp;Transforming with Map  
 &nbsp;&nbsp;&nbsp;&nbsp;Excluding with Filter  
 &nbsp;&nbsp;&nbsp;&nbsp;Isolating side effects with ForEach  
@@ -38,7 +38,7 @@ In order to build larger workflows out of smaller functions, we need functions w
 ```csharp
 static void WriteFullName(string firstName, string lastName)
 {
-    var fullName = $"{firstName} {lastName}”;
+    var fullName = $"{firstName} {lastName}";
     Console.WriteLine(fullName);
 }
 ```
@@ -51,7 +51,7 @@ Furthermore, **how would you use this function in another context?** What if you
 
 ```csharp
 static string FullName(string firstName, string lastName) =>
-    "{firstName} {lastName}”;
+    "{firstName} {lastName}";
 ```
 
 We’ve made the function so simple we can write it as an expression bodied method. Now, it’s up the consumer of the function to decide how to use it. It can either be composed into a larger flow or be used to produce a side effect. To write the full name to the console we pass the output of the ```FullName``` function as input to ```Console.WriteLine```.
@@ -81,3 +81,5 @@ age = 43;
 ```
 
 C# offers no language support to make them immutable. We can turn the age variable into a field and mark it as ```readonly``` but that increases its scope. Unfortunately, sometimes our best bet to achieve immutability by *convention* - we simple don’t change things.
+
+Next, we'll look at the design considerations for [creating a functional list API]({% post_url 2018-08-04-designing-a-functional-list-api %}).
