@@ -15,8 +15,8 @@ tags:
 &nbsp;&nbsp;[Imperative versus declarative programming]({% post_url 2018-07-26-imperative-versus-declarative-programming %})  
 &nbsp;&nbsp;&nbsp;&nbsp;[Functional principles for better code]({% post_url 2018-07-27-functional-principles-for-better-code %})  
 **[Designing a functional list API]({% post_url 2018-08-04-designing-a-functional-list-api %})**  
+&nbsp;&nbsp;&nbsp;&nbsp;[Writing a filter function]({% post_url 2018-08-06-writing-a-filter-function %})  
 &nbsp;&nbsp;&nbsp;&nbsp;Transforming with Map  
-&nbsp;&nbsp;&nbsp;&nbsp;Excluding with Filter  
 &nbsp;&nbsp;&nbsp;&nbsp;Isolating side effects with ForEach  
 Functional composition  
 &nbsp;&nbsp;&nbsp;&nbsp;Functional composition through extension methods  
@@ -51,4 +51,4 @@ Here is the pipeline again with the three parts categorized.
 
 ![Pipeline]({{ "/assets/calorie_pipeline_described.png" | absolute_url }})
 
-Now it’s time to create a small class of higher-order functions to help us refactor the code towards functional thinking. We’ll stick to our principles - the functions should be pure, and they should be immutable. First, we’ll do the filtering.
+Now it’s time to create a small class of higher-order functions to help us refactor the code towards functional thinking. We’ll stick to our principles - the functions should be pure, and they should be immutable. First, we’ll do the [filtering]({% post_url 2018-08-06-writing-a-filter-function %}).

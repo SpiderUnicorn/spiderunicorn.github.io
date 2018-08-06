@@ -13,8 +13,8 @@ tags:
 &nbsp;&nbsp;[Imperative versus declarative programming]({% post_url 2018-07-26-imperative-versus-declarative-programming %})  
 &nbsp;&nbsp;&nbsp;&nbsp;[Functional principles for better code]({% post_url 2018-07-27-functional-principles-for-better-code %})  
 [Designing a functional list API]({% post_url 2018-08-04-designing-a-functional-list-api %})  
+&nbsp;&nbsp;&nbsp;&nbsp;[Writing a filter function]({% post_url 2018-08-06-writing-a-filter-function %})  
 &nbsp;&nbsp;&nbsp;&nbsp;Transforming with Map  
-&nbsp;&nbsp;&nbsp;&nbsp;Excluding with Filter  
 &nbsp;&nbsp;&nbsp;&nbsp;Isolating side effects with ForEach  
 Functional composition  
 &nbsp;&nbsp;&nbsp;&nbsp;Functional composition through extension methods  
